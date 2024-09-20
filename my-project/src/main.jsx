@@ -1,7 +1,13 @@
 import { StrictMode } from 'react'
+import EditContact from "./routes/edit";
 import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
+import Root, { loader as rootLoader, action as rootAction, } from "./routes/root";
+import Contact, {
+  loader as contactLoader,
+} from "./routes/contact";
+import ErrorPage from './error-page';
 import './index.css'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -10,7 +16,22 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    loader: rootLoader,
+    action: rootAction,
+    children: [
+      {
+        path: "contacts/:contactId",
+        element: <Contact />,
+        loader: contactLoader,
+      },
+      {
+        path: "contacts/:contactId/edit",
+        element: <EditContact />,
+        loader: contactLoader,
+      },
+    ],
   },
 ]);
 
