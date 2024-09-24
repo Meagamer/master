@@ -1,0 +1,41 @@
+3. Group Anagrams
+Description: Given an array of strings, group the anagrams together.
+
+Input: ["eat", "tea", "tan", "ate", "nat", "bat"]
+Output: [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]]                                                                                                    [COMPLETED]
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. Unique Character Count
+Description: Write a function that takes a string and returns the count of unique characters.
+
+Input: "hello"
+Output: 3 (unique characters: h, e, o)
+5. Character Frequency Sort
+Description: Given a string, return a sorted array of characters based on their frequency from highest to lowest.
+
+Input: "tree"
+Output: ["e", "e", "t", "r"]
+6. Palindrome Permutation
+Description: Write a function that checks if a string can be rearranged to form a palindrome.
+
+Input: "civic"
+Output: true
+7. Find the First Non-Repeating Character
+Description: Write a function that finds the first non-repeating character in a string.
+
+Input: "leetcode"
+Output: 'l'
+8. Remove Duplicate Characters
+Description: Create a function that removes duplicate characters from a string and returns the result.
+
+Input: "aabbcc"
+Output: "abc"
+9. Check Anagram
+Description: Write a function that checks if two strings are anagrams of each other.
+
+Input: ("listen", "silent")
+Output: true
+10. Convert Case of Characters
+Description: Write a function that converts all lowercase letters in a string to uppercase and all uppercase letters to lowercase.
+
+Input: "Hello World"
+Output: "hELLO wORLD"
