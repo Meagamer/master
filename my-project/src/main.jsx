@@ -1,17 +1,38 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
-} from "react-router-dom";
+} from "react-router-dom"
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import ErrorPage from './error-page'
+import Contact, {
+  loader as contactLoader,
+} from "./routes/contact";
+import EditContact from "./routes/edit"
+
+import Root, { loader as rootLoader, action as rootAction,} from "./routes/root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Hello world!</div>,
-  },
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    loader: rootLoader,
+    action: rootAction,
+    children: [
+      {
+        path: "contacts/:contactId",
+        element: <Contact />,
+        loader: contactLoader,
+      },
+      {
+        path: "contacts/:contactId/edit",
+        element: <EditContact />,
+        loader: contactLoader,
+      },
+    ],
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
